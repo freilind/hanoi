@@ -24,19 +24,19 @@ document.addEventListener('DOMContentLoaded', () => {
         '#2ecc71', // green
         '#f1c40f', // yellow
         '#e67e22', // orange
-        '#e74c3c'  // red
+        '#e74c3c',  // red
+        '#A33CE7',  // purple
+        '#3CE7D3'  // cyan
     ];
 
     // Game state
-    let diskCount = 3;
+    let diskCount = 0;
     let moves = 0;
     let selectedTower = null;
     let gameStarted = false;
 
     // Initialize the game
     function initGame() {
-        console.log("***** initGame *****");
-
         // Hide win message with both CSS class and inline style
         winMessage.classList.add('hidden');
         winMessage.style.display = 'none';
