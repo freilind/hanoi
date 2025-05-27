@@ -1,0 +1,15 @@
+# .dockerignore
+node_modules
+.git
+.gitignore
+README.md
+*/Dockerfile
+*/docker-compose.yml
+*.log
+.DS_Store
+temp
+tmp
+.idea
+config/**
+.aws
+.env

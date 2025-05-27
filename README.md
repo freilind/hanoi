@@ -57,6 +57,34 @@ This game runs directly in your web browser. No installation is required!
    - Open in your favorite browser `index.html`
 
 Alternatively, you can play the game online at [your-demo-link-here](https://example.com).
+
+## Docker Setup
+You can also run the game using Docker:
+
+### Using Docker directly
+
+# Build the Docker image
+```bash
+docker build -t hanoi-web -f root/Dockerfile .
+```
+# Run the container
+```bash
+docker run -p 8080:80 hanoi-web
+```
+# Access the game at [http://localhost:8080](http://localhost:8080)
+
+### Using Docker Compose
+1. Make sure you have Docker and Docker Compose installed
+2. Run the following command from the project root:
+```bash 
+docker-compose -f root/docker-compose.yml up -d
+``` 
+3. Access the game at http://localhost:8080
+4. To stop the container:
+```bash 
+docker-compose -f root/docker-compose.yml down
+```
+
 ## Development
 The game is built using:
 - HTML5 for structure

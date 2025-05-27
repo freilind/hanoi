@@ -1,0 +1,25 @@
+services:
+  web:
+    build:
+      context: ..  # Build context set to parent directory
+      dockerfile: ./config/Dockerfile  # Path to Dockerfile from the context
+    image: hanoi-web
+    container_name: hanoi-web-container
+    ports:
+      - "8080:80"  # Map host port 8080 to container port 80
+    restart: unless-stopped
+    #volumes:
+    # Optional: Use this for development to reflect changes without rebuilding
+    # - ../:/usr/share/nginx/html
+
+    # If you have configuration files that need to be mounted
+    # - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - hanoi-network
+
+networks:
+  hanoi-network:
+    driver: bridge
+
+# docker-compose up
+# docker-compose down
